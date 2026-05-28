@@ -123,7 +123,8 @@ app.post("/acessos", (req, res) => {
 app.post("/feedbacks", (req, res) => {
   console.log("Feedback recebido:", req.body);
 
-  const { nome, tipo, mensagem } = req.body;
+  const { nome, tipo, descricao } = req.body;
+  const mensagem = descricao;
 
   if (!tipo || !mensagem) {
     return res.status(400).json({ error: "Campos obrigatórios." });
